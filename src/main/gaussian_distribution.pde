@@ -6,8 +6,8 @@ Copyright (c) 2013 Josh Giesbrecht - OSI/MIT license (http://recodeproject/licen
 Edited for The 70s Party Project by Giorgos Petkakis, 2017
 */
 
-color fg = color(10,10,10);
-color bg = color(255, 0);
+color fg = color(0);
+color bg = color(0);
 
 void fadeOut() {
   fill(bg);
