@@ -15,11 +15,12 @@ float strokeWeightVolume = 1;
 int volumeControl = 10;
 float rotation_main = 0;
 
+PImage vignette;
+
 void setup()
 {
   //set up graphics
-  //smooth();
-  background(100);
+  background(0);
   //size(800,800,P3D);
   fullScreen();
   frameRate(80);
@@ -34,6 +35,7 @@ void setup()
   beat.detectMode(BeatDetect.SOUND_ENERGY);
   
   init();
+  vignette = loadImage("vignette.png");
 }
 
 void draw()
@@ -42,7 +44,7 @@ void draw()
   strokeWeightVolume = volumeControl * in.mix.level();
   
   
-  if (beat.isOnset()) {
+  if(beat.isOnset()) {
     strokeWeightVolume *= 2;
   }
     fadeOut();
@@ -52,6 +54,7 @@ void draw()
       generate();
     popMatrix();
   
+  image(vignette, 0, 0, width, height);
   rotation_main += PI/100;
 }
 
