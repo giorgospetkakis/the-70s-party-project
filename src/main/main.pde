@@ -12,7 +12,7 @@ BeatDetect beat;
 
 int mode = 1;
 float strokeWeightVolume = 1;
-int volumeControl = 10;
+int volumeControl = 2;
 float rotation_main = 0;
 
 PImage vignette;
@@ -54,7 +54,7 @@ void draw()
       generate();
     popMatrix();
   
-  image(vignette, 0, 0, width, height);
+  // image(vignette, 0, 0, width, height);
   rotation_main += PI/100;
 }
 
@@ -73,7 +73,7 @@ void generate()
       break;
     case 1:
       rects();
-      boxes();
+      //boxes();
       break;
     default:
       break;
@@ -94,7 +94,7 @@ void keyPressed()
       break;
     }
     case UP:{
-      volumeControl += 10;
+      volumeControl += 2;
       break;
     }
     case DOWN:{
